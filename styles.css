@@ -1,0 +1,236 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333; /* Primary Text Color */
+    background-color: #e3f2fd; /* Light Blue Background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at bottom */
+    text-align: center; /* Center-aligns all text within the body by default */
+}
+
+header {
+    color: black; /* Light Text Color */
+    padding: 40px;
+    text-align: center;
+    position: relative; /* Allows absolute positioning within the header */
+    z-index: 1; /* Ensure header is on top */
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+nav {
+    position: fixed; /* Use fixed positioning to keep nav visible */
+    top: 90px; /* Place nav at the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    gap: 50px; /* Space between buttons */
+    margin: 10px 0; /* Margin to ensure it's not touching the top */
+    z-index: 2; /* Ensure nav is above other content */
+}
+
+nav a {
+    display: inline-block;
+    background-color: #2196f3; /* Medium Blue Button Background */
+    color: #ffffff; /* Button Text Color */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #1976d2; /* Darker Blue on Hover */
+    transform: translateY(-2px); /* Slight Lift on Hover */
+}
+
+/* Uniform Box Styling for All Pages */
+main {
+    position: relative;
+    flex: 1; 
+    width: 50%;
+    max-width: 800px; 
+    height: 500px; 
+    margin: 40px auto;
+    padding: 20px;
+    /*background: #1976d2;*/
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    color: black;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #1976d2; /* Dark Blue Heading Color */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure heading is center-aligned */
+}
+
+p {
+    font-size: 1em;
+    color: black; /* Secondary Text Color */
+    line-height: 1.6;
+    text-align: center; /* Center-aligns paragraph text */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: center; /* Center-aligns input group */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #1976d2; /* Dark Blue Label Color */
+    text-align: center; /* Center-aligns label text */
+}
+
+.input-group input,
+.input-group select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #90caf9; /* Light Blue Border */
+    border-radius: 10px;
+    font-size: 1em;
+    text-align: center; /* Center-aligns input text */
+}
+
+button {
+    background-color: #2196f3; /* Medium Blue Button Background */
+    color: #ffffff; /* Button Text Color */
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin: 10px; /* Adds some space around buttons */
+}
+
+button:hover {
+    background-color: #1976d2; /* Darker Blue on Hover */
+}
+
+#result {
+    font-size: 1.2em;
+    color: #333; /* Result Text Color */
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #e3f2fd; /* Light Blue Background */
+    text-align: center; /* Center-aligns result text */
+}
+
+/* Styling for BMI Categories Section */
+.bmi-categories {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #f1f8e9; /* Light Green Background for BMI Categories */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+    text-align: center; /* Center-aligns the text within the BMI categories section */
+}
+
+.bmi-categories h2 {
+    color: #0d47a1; 
+}
+
+.bmi-categories p {
+    color: #333; /* Corrected Secondary Text Color */
+}
+
+.bmi-categories ul {
+    list-style-type: none;
+    text-align: center; /* Aligns text to the left within the list */
+    padding: 0;
+}
+
+.bmi-categories li {
+    color: #0d47a1; /* Dark Blue Text Color for List Items */
+    margin: 15px 0;
+    font-size: 1em;
+}
+
+footer {
+    color: #ffffff; /* Light Text Color */
+    text-align: center; /* Center-aligns footer text */
+    padding: 10px;
+}
+
+/* Animation for modal background */
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animation for modal content */
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Styling for BMI result modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    animation: fadeInModal 0.5s ease-out; /* Background fade-in animation */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px; /* Rounded corners */
+    animation: slideDown 0.5s ease-out; /* Content slide-down animation */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#spinner {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #0d47a1;
+}
+
+#spinner::before {
+    content: '⏳'; /* You can use any spinner symbol or image */
+    animation: spin 1s linear infinite;
+}
+
