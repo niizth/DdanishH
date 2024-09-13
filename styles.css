@@ -61,14 +61,15 @@ nav a {
     color: #2196f3; /* Link color */
     text-decoration: none; /* Remove underline */
     font-size: 1em; /* Font size */
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease, font-weight 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* Style for hover and active links */
 nav a:hover,
 nav a.active {
     color: #1976d2; /* Darker blue on hover */
-    text-decoration: underline; /* Underline on hover */
+    font-weight: bold; /* Make text bold */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
 }
 
 /* Uniform Box Styling for All Pages */
@@ -193,19 +194,19 @@ button:hover {
     font-size: 1em;
 }
 
+/* Footer Styling */
 footer {
     position: fixed; /* Fix footer at the bottom */
     bottom: 0; /* Align to the bottom of the viewport */
     left: 0; /* Align to the left edge */
     width: 100%; /* Full width of the page */
     background-color: #2196f3; /* Match background color with body */
-    color: #ffffff; /* Dark Text Color for better contrast */
+    color: #ffffff; /* White Text Color for better contrast */
     text-align: center; /* Center-aligns footer text */
     padding: 10px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
     z-index: 2; /* Ensure footer is above other content */
 }
-
 
 /* Animation for modal background */
 @keyframes fadeInModal {
@@ -221,24 +222,48 @@ footer {
 
 /* Styling for BMI result modal */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    animation: fadeInModal 0.5s ease-out; /* Background fade-in animation */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto; /* Enable scrolling */
+    animation: fadeInModal 0.5s ease-out;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 10px; /* Rounded corners */
-    animation: slideDown 0.5s ease-out; /* Content slide-down animation */
+    width: 80%;
+    border-radius: 10px;
+    animation: slideDown 0.5s ease-out;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Flex container for BMI result content */
+.bmi-result-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Styling for BMI image */
+.bmi-image {
+    max-width: 500px; /* Control the image size */
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners for the image */
+}
+
+/* Styling for the BMI info */
+#bmi-info {
+    font-size: 1.2em;
+    color: #333;
+    text-align: left;
 }
 
 .close {
