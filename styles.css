@@ -72,19 +72,20 @@ nav a.active {
 }
 
 /* Uniform Box Styling for All Pages */
+/* Uniform Box Styling for All Pages */
 main {
     position: relative;
-    flex: 2; 
-    width: 100%;
-    max-width: 800px; 
-    height: 500px; 
-    margin: 100px auto;
+    width: 90%; /* Full width of the container */
+    max-width: 1200px; /* Optional: set a max width */
+    margin: 100px auto; /* Center horizontally with space from the top */
     padding: 20px;
+    background-color: #e3f2fd; /* Light Blue Background */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     text-align: center; 
     color: black;
 }
+
 
 h2 {
     font-size: 1.8em;
