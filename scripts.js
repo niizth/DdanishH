@@ -15,36 +15,38 @@ function calculateBMI() {
     setTimeout(() => {
         const bmi = weight / (height * height);
         let category = '';
-        let imageSrc = '';
-        let categoryInfo = '';
+        let info = '';
+        let image = '';
 
-        // Determine category based on BMI value
+        // Determine category based on BMI value and corresponding information
         if (bmi < 18.5) {
             category = 'Underweight';
-            imageSrc = 'underweight.png';
-            categoryInfo = 'You are underweight. Consider a balanced diet to gain weight healthily.';
+            info = 'Being underweight can lead to a weakened immune system, fragile bones, and feeling tired. Consult a healthcare provider to ensure you are getting proper nutrition.';
+            image = '<img src="underweight.png" alt="Underweight advice" style="width:100%">';
         } else if (bmi >= 18.5 && bmi < 24.9) {
             category = 'Normal weight';
-            imageSrc = 'normalweight.png';
-            categoryInfo = 'You have a normal weight. Maintain a healthy diet and regular exercise.';
+            info = 'You have a healthy weight for your height. Keep maintaining a balanced diet and regular physical activity.';
+            image = '<img src="normalweight.png" alt="Healthy weight advice" style="width:100%">';
         } else if (bmi >= 25 && bmi < 29.9) {
             category = 'Overweight';
-            imageSrc = 'overweight.png';
-            categoryInfo = 'You are overweight. Consider adjusting your diet and increasing physical activity.';
+            info = 'Being overweight increases the risk of cardiovascular diseases and other health issues. Consider a healthy diet and regular exercise.';
+            image = '<img src="overweight.png" alt="Overweight advice" style="width:100%">';
         } else {
             category = 'Obesity';
-            imageSrc = 'obesity.png';
-            categoryInfo = 'You are obese. It’s recommended to consult with a healthcare provider for advice.';
+            info = 'Obesity can lead to severe health issues like heart disease, diabetes, and hypertension. Please consult with a healthcare provider for guidance on a weight management plan.';
+            image = '<img src="obesity.png" alt="Obesity advice" style="width:100%">';
         }
 
         // Hide spinner
         spinner.style.display = 'none';
 
-        // Display result in modal
-        const bmiInfoDiv = document.getElementById('bmi-info');
-        const bmiImage = document.getElementById('bmi-image');
-        bmiInfoDiv.innerHTML = `<strong>Your BMI is ${bmi.toFixed(1)}</strong> (${category})<br><p>${categoryInfo}</p>`;
-        bmiImage.src = imageSrc;
+        // Display result in modal with extra info and image
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <strong>Your BMI is ${bmi.toFixed(1)}</strong> (${category})<br>
+            <p>${info}</p>
+            ${image}
+        `;
         openModal();
     }, 500); // Simulate delay
 }
@@ -55,8 +57,7 @@ function clearForm() {
     document.getElementById('weight').value = '';
 
     // Clear result
-    document.getElementById('bmi-info').innerHTML = '';
-    document.getElementById('bmi-image').src = '';
+    document.getElementById('result').innerHTML = '';
     document.getElementById('spinner').style.display = 'none';
 }
 
