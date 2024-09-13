@@ -2,7 +2,7 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #333; /* Primary Text Color */
-    background-color: #e3f2fd; /* Light Blue Background */
+    background-color: #ffffff; /* Light Blue Background */
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,12 +15,13 @@ body {
 header {
     position: relative; /* Make header scroll with the page */
     width: 100%; /* Full width of the page */
-    background-color: #e3f2fd; /* Match background color with body */
+    background-color: #2196f3; /* Match background color with body */
     padding: 20px 0; /* Padding for space around content */
     display: flex;
     justify-content: center; /* Center content horizontally */
     z-index: 2; /* Ensure header is above other content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    
 }
 
 /* Style for the header content box */
@@ -37,7 +38,7 @@ header {
 header h1 {
     margin: 0; /* Remove default margin */
     font-size: 3em; /* Adjust font size */
-    color: #333; /* Text color */
+    color: #ffffff; /* Text color */
 }
 
 /* Style for the nav element */
@@ -74,7 +75,7 @@ nav a.active {
 main {
     position: relative;
     flex: 2; 
-    width: 50%;
+    width: 100%;
     max-width: 800px; 
     height: 500px; 
     margin: 100px auto;
@@ -196,8 +197,8 @@ footer {
     bottom: 0; /* Align to the bottom of the viewport */
     left: 0; /* Align to the left edge */
     width: 100%; /* Full width of the page */
-    background-color: #e3f2fd; /* Match background color with body */
-    color: #333; /* Dark Text Color for better contrast */
+    background-color: #2196f3; /* Match background color with body */
+    color: #ffffff; /* Dark Text Color for better contrast */
     text-align: center; /* Center-aligns footer text */
     padding: 10px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
