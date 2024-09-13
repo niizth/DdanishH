@@ -16,7 +16,7 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="healthinfo.html">Health Info</a>
-        <a href="bmi.html"  class="active">BMI Calculator</a>
+        <a href="bmi.html" class="active">BMI Calculator</a>
     </nav> 
     <main>
         <h2>BMI Calculator</h2>
@@ -35,7 +35,6 @@
             <button type="button" onclick="calculateBMI()">Calculate BMI</button>
             <button type="button" onclick="clearForm()">Clear</button>
         </form>
-        
 
         <!-- Spinner -->
         <div id="spinner" style="display: none;">
@@ -55,14 +54,17 @@
         </div>
     </main>
     <footer>
-        <p>&copy; DANISH HAIQAL BIN KARIM / BPJ231210308</p>
+        <p>&copy; DANISH HAIQAL BIN KARIM / BPJ231210308 / DIT 4/1</p>
     </footer>
 
     <!-- Modal for BMI Result -->
     <div id="bmiModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <div id="result"></div>
+            <div id="result" class="bmi-result-content">
+                <img id="bmi-image" src="" alt="BMI category image" class="bmi-image">
+                <div id="bmi-info"></div>
+            </div>
         </div>
     </div>
 </body>
