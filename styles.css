@@ -222,48 +222,26 @@ footer {
 
 /* Styling for BMI result modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    overflow: auto; /* Enable scrolling */
-    animation: fadeInModal 0.5s ease-out;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    overflow: auto; /* Enable scrolling when needed */
+    animation: fadeInModal 0.5s ease-out; /* Background fade-in animation */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 15% auto; /* Center the modal */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    border-radius: 10px;
-    animation: slideDown 0.5s ease-out;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-/* Flex container for BMI result content */
-.bmi-result-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Styling for BMI image */
-.bmi-image {
-    max-width: 500px; /* Control the image size */
-    height: auto;
-    border-radius: 10px; /* Optional: Rounded corners for the image */
-}
-
-/* Styling for the BMI info */
-#bmi-info {
-    font-size: 1.2em;
-    color: #333;
-    text-align: left;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px; /* Rounded corners */
+    animation: slideDown 0.5s ease-out; /* Content slide-down animation */
+    max-height: 80vh; /* Max height to prevent overflow */
+    overflow-y: auto; /* Vertical scroll when content exceeds the height */
 }
 
 .close {
