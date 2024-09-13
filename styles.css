@@ -11,58 +11,74 @@ body {
     text-align: center; /* Center-aligns all text within the body by default */
 }
 
+/* Style for the header */
 header {
-    color: black; /* Light Text Color */
-    padding: 40px;
-    text-align: center;
-    position: relative; /* Allows absolute positioning within the header */
-    z-index: 1; /* Ensure header is on top */
-}
-
-header h1 {
-    font-size: 2em;
-    margin: 0;
-}
-
-nav {
-    position: fixed; /* Use fixed positioning to keep nav visible */
-    top: 90px; /* Place nav at the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
+    position: relative; /* Make header scroll with the page */
+    width: 100%; /* Full width of the page */
+    background-color: #e3f2fd; /* Match background color with body */
+    padding: 20px 0; /* Padding for space around content */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    gap: 50px; /* Space between buttons */
-    margin: 10px 0; /* Margin to ensure it's not touching the top */
-    z-index: 2; /* Ensure nav is above other content */
+    justify-content: center; /* Center content horizontally */
+    z-index: 2; /* Ensure header is above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
+/* Style for the header content box */
+.header-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text inside the header content */
+    max-width: 1200px; /* Optional: set a max width for the header content */
+    width: 100%; /* Full width of the header content */
+}
+
+/* Style for the header title */
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 3em; /* Adjust font size */
+    color: #333; /* Text color */
+}
+
+/* Style for the nav element */
+nav {
+    position: sticky; /* Stick nav to the top when scrolling */
+    top: 0; /* Stick to the top of the viewport */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width of the page */
+    background-color: #e3f2fd; /* Match background color with body */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    gap: 20px; /* Space between links */
+    padding: 10px 0; /* Padding for space around links */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    z-index: 1; /* Ensure nav is above other content */
+}
+
+/* Style for the links */
 nav a {
-    display: inline-block;
-    background-color: #2196f3; /* Medium Blue Button Background */
-    color: #ffffff; /* Button Text Color */
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #2196f3; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1em; /* Font size */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
+/* Style for hover and active links */
 nav a:hover,
 nav a.active {
-    background-color: #1976d2; /* Darker Blue on Hover */
-    transform: translateY(-2px); /* Slight Lift on Hover */
+    color: #1976d2; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Uniform Box Styling for All Pages */
 main {
     position: relative;
-    flex: 1; 
+    flex: 2; 
     width: 50%;
     max-width: 800px; 
     height: 500px; 
-    margin: 40px auto;
+    margin: 100px auto;
     padding: 20px;
-    /*background: #1976d2;*/
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     text-align: center; 
@@ -83,28 +99,41 @@ p {
     text-align: center; /* Center-aligns paragraph text */
 }
 
+/* Adjust input boxes to have curved corners and center text */
+.input-group input {
+    width: 100%; /* Full width of the container */
+    padding: 10px;
+    border: 1px solid #90caf9; /* Light Blue Border */
+    border-radius: 10px; /* Curved corners */
+    text-align: center; /* Center text inside input */
+    font-size: 1em; /* Font size */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Ensure input-group container aligns items properly */
+.input-group-container {
+    display: flex;
+    justify-content: center; /* Center align the groups horizontally */
+    gap: 20px; /* Space between the input groups */
+    margin-bottom: 20px; /* Space below the input groups */
+}
+
+
+/* Adjust input-group styles */
 .input-group {
-    margin-bottom: 20px;
-    text-align: center; /* Center-aligns input group */
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center; /* Center align the label and input */
 }
 
 .input-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    color: #1976d2; /* Dark Blue Label Color */
-    text-align: center; /* Center-aligns label text */
+    margin-bottom: 5px; /* Space between label and input */
 }
 
-.input-group input,
-.input-group select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border: 1px solid #90caf9; /* Light Blue Border */
-    border-radius: 10px;
-    font-size: 1em;
-    text-align: center; /* Center-aligns input text */
+.input-group input {
+    width: 100%; /* Full width of the container */
 }
+
 
 button {
     background-color: #2196f3; /* Medium Blue Button Background */
@@ -163,10 +192,18 @@ button:hover {
 }
 
 footer {
-    color: #ffffff; /* Light Text Color */
+    position: fixed; /* Fix footer at the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width of the page */
+    background-color: #e3f2fd; /* Match background color with body */
+    color: #333; /* Dark Text Color for better contrast */
     text-align: center; /* Center-aligns footer text */
     padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    z-index: 2; /* Ensure footer is above other content */
 }
+
 
 /* Animation for modal background */
 @keyframes fadeInModal {
@@ -233,4 +270,3 @@ footer {
     content: '⏳'; /* You can use any spinner symbol or image */
     animation: spin 1s linear infinite;
 }
-
