@@ -2,7 +2,10 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #333; /* Primary Text Color */
-    background-color: #ffffff; /* Light Blue Background */
+    background: url('bg.jpg') no-repeat; /* Background image */
+    background-size: cover; /* Cover the entire page */
+    background-attachment: fixed; /* Keep background fixed during scrolling (optional) */
+    background-position: top left; /* Align background to the top left */
     margin: 0;
     padding: 0;
     display: flex;
@@ -80,11 +83,12 @@ main {
     max-width: 1200px; /* Optional: set a max width */
     margin: 100px auto; /* Center horizontally with space from the top */
     padding: 20px;
-    background-color: #e3f2fd; /* Light Blue Background */
+    background: transparent;
+    backdrop-filter: blur(50px);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     text-align: center; 
-    color: black;
+    color: white;
 }
 
 
@@ -93,13 +97,31 @@ h2 {
     color: #1976d2; /* Dark Blue Heading Color */
     margin-bottom: 20px;
     text-align: center; /* Ensure heading is center-aligned */
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #2196f3; /* Dark Blue Heading Color */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure heading is center-aligned */
+    margin-top: 0;
 }
 
 p {
     font-size: 1em;
-    color: black; /* Secondary Text Color */
+    color: white; /* Secondary Text Color */
     line-height: 1.6;
     text-align: center; /* Center-aligns paragraph text */
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    background-color:  rgba(0, 0, 0, 0.4); /* 50% transparent grey background *//*rgba(0, 0, 0, 0.7); /* 50% transparent black background */
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Adjust input boxes to have curved corners and center text */
@@ -155,20 +177,21 @@ button:hover {
     background-color: #1976d2; /* Darker Blue on Hover */
 }
 
-#result {
-    font-size: 1.2em;
-    color: #333; /* Result Text Color */
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #e3f2fd; /* Light Blue Background */
-    text-align: center; /* Center-aligns result text */
+.bmi-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* 50% transparent grey background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
+
 
 /* Styling for BMI Categories Section */
 .bmi-categories {
     margin-top: 10px;
     padding: 5px;
-    background-color: #f1f8e9; /* Light Green Background for BMI Categories */
+    background-color: rgba(0, 0, 0, 0.4); /* 50% transparent grey background *//*rgba(0, 0, 0, 0.7); /* 50% transparent black background */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
     text-align: center; /* Center-aligns the text within the BMI categories section */
@@ -178,10 +201,6 @@ button:hover {
     color: #0d47a1; 
 }
 
-.bmi-categories p {
-    color: #333; /* Corrected Secondary Text Color */
-}
-
 .bmi-categories ul {
     list-style-type: none;
     text-align: center; /* Aligns text to the left within the list */
@@ -189,7 +208,7 @@ button:hover {
 }
 
 .bmi-categories li {
-    color: #0d47a1; /* Dark Blue Text Color for List Items */
+    color: #2196f3; /* Dark Blue Text Color for List Items */
     margin: 15px 0;
     font-size: 1em;
 }
