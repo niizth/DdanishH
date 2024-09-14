@@ -22,7 +22,7 @@ function calculateBMI() {
         if (bmi < 18.5) {
             category = 'Underweight';
             info = 'Being underweight can lead to a weakened immune system, fragile bones, and feeling tired. Consult a healthcare provider to ensure you are getting proper nutrition.';
-            image = '<img src="underweight.png" alt="Underweight advice" style="width:100%">';
+            image = '<img src="underweight.PNG" alt="Underweight advice" style="width:100%">';
         } else if (bmi >= 18.5 && bmi < 24.9) {
             category = 'Normal weight';
             info = 'You have a healthy weight for your height. Keep maintaining a balanced diet and regular physical activity.';
