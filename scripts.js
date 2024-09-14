@@ -54,7 +54,7 @@ function calculateBMI() {
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `
             ${image}
-            <strong>Your BMI is ${bmi.toFixed(1)}</strong><br>
+            <strong>Your BMI is ${bmi.toFixed(2)}</strong><br>
             <p>${info}</p>
         `;
     }, 500); // Simulate delay
