@@ -1,7 +1,7 @@
 function calculateBMI() {
     const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
     const weight = parseFloat(document.getElementById('weight').value);
-    
+
     if (isNaN(height) || isNaN(weight)) {
         alert('Please enter valid numbers for height and weight.');
         return;
@@ -40,33 +40,26 @@ function calculateBMI() {
         // Hide spinner
         spinner.style.display = 'none';
 
-        // Display result in modal with extra info and image
+        // Display result directly on the page
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `
-            <strong>Your BMI is ${bmi.toFixed(1)}</strong> (${category})<br>
-            <p>${info}</p>
             ${image}
+            <strong>Your BMI is ${bmi.toFixed(1)}</strong><br>
+            <p>${info}</p>
         `;
-        openModal();
     }, 500); // Simulate delay
 }
 
 function clearForm() {
-    // Clear all input fields
+    // Clear height and weight input fields
     document.getElementById('height').value = '';
     document.getElementById('weight').value = '';
 
-    // Clear result
-    document.getElementById('result').innerHTML = '';
-    document.getElementById('spinner').style.display = 'none';
-}
+    // Clear only the output result, not the placeholder text
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '<strong>Your BMI result will be displayed here.</strong>';
 
-// Function to open modal
-function openModal() {
-    document.getElementById('bmiModal').style.display = 'block';
-}
-
-// Function to close modal
-function closeModal() {
-    document.getElementById('bmiModal').style.display = 'none';
+    // Optionally hide the spinner if it's visible
+    const spinner = document.getElementById('spinner');
+    spinner.style.display = 'none';
 }
