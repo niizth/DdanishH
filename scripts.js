@@ -2,8 +2,18 @@ function calculateBMI() {
     const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
     const weight = parseFloat(document.getElementById('weight').value);
 
-    if (isNaN(height) || isNaN(weight)) {
-        alert('Please enter valid numbers for height and weight.');
+     // Check if the height or weight is invalid or 0, and show specific messages
+     if (isNaN(height) || height === 0) {
+        if (isNaN(weight) || weight === 0) {
+            alert('Please enter valid numbers greater than 0 for both height and weight.');
+        } else {
+            alert('Please enter a valid number greater than 0 for height.');
+        }
+        return;
+    }
+
+    if (isNaN(weight) || weight === 0) {
+        alert('Please enter a valid number greater than 0 for weight.');
         return;
     }
 
@@ -63,4 +73,3 @@ function clearForm() {
     const spinner = document.getElementById('spinner');
     spinner.style.display = 'none';
 }
-
