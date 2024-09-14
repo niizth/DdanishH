@@ -2,7 +2,7 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #333; /* Primary Text Color */
-    background: url('bg.jpg') no-repeat; /* Background image */
+    background: url('bg.png') no-repeat; /* Background image */
     background-size: cover; /* Cover the entire page */
     background-attachment: fixed; /* Keep background fixed during scrolling (optional) */
     background-position: top left; /* Align background to the top left */
