@@ -16,6 +16,7 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="healthinfo.html">Health Info</a>
+        <a href="featuresection.html">Feature Section</a>
         <a href="bmi.html" class="active">BMI Calculator</a>
     </nav> 
     <main>
@@ -41,6 +42,11 @@
             <p>Calculating...</p>
         </div>
 
+        <!-- BMI Result Section -->
+        <div id="result" class="bmi-result">
+            <strong>Your BMI result will be displayed here.</strong>
+        </div>
+
         <!-- BMI Categories Description -->
         <div class="bmi-categories">
             <h2>BMI Categories</h2>
@@ -57,12 +63,7 @@
         <p>&copy; DANISH HAIQAL BIN KARIM / BPJ231210308 / DIT 4/1</p>
     </footer>
 
-    <!-- Modal for BMI Result -->
-    <div id="bmiModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="result"></div>
-        </div>
-    </div>
+    
+
 </body>
 </html>
