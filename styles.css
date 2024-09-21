@@ -203,6 +203,7 @@ button:hover {
 }
 
 .bmi-result {
+    border: 1px solid #ccc;
     margin-top: 20px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.4); /* 50% transparent grey background */
