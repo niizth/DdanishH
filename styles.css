@@ -127,7 +127,7 @@ p {
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    background-color:  rgba(0, 0, 0, 0.4); /* 50% transparent grey background *//*rgba(0, 0, 0, 0.7); /* 50% transparent black background */
+    background-color:  rgba(0, 0, 0, 0.4); 
     border-radius: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -214,6 +214,7 @@ button:hover {
 
 /* Styling for BMI Categories Section */
 .bmi-categories {
+    border: 1px solid #ccc;
     margin-top: 10px;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.4); /* 50% transparent grey background *//*rgba(0, 0, 0, 0.7); /* 50% transparent black background */
